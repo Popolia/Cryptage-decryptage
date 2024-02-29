@@ -1,0 +1,10 @@
+tk #: module principal pour la création de l'interface graphique.
+cryptography #: pour les opérations de chiffrement et de déchiffrement AES.
+pyperclip # : pour copier du texte dans le presse-papiers.
+secrets #: pour générer des octets aléatoires.
+pyinstaller
+pyperclip
+
+
+
+
