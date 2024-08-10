@@ -186,7 +186,7 @@ def enregistrer_document():
 
 # Création de la fenêtre principale
 root = tk.Tk()
-root.title("Cryptage/Décryptage avec Méthode et Mode")
+root.title("Cryptage/Décryptage by Cédric.P")
 
 # Création des cadres pour organiser les éléments
 input_frame = tk.Frame(root, padx=10, pady=10)
