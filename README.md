@@ -48,6 +48,8 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
     source Logiciel_env/bin/activate
     ```
     
+    ![image](https://github.com/user-attachments/assets/51a55c5a-03d6-4b90-94c7-2bce857cbe2a)
+
 2. Installation des Dépendances / Install Dependencies
 
    Avec l'environnement virtuel activé, installez les dépendances nécessaires :
