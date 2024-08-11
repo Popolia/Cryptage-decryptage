@@ -25,30 +25,46 @@ Cette application Python avec une interface graphique Tkinter permet de **crypte
 
 Il est recommandé d'utiliser un environnement virtuel pour gérer les dépendances :
 
-**Sous Windows :**
+#### Sous Windows
+
+1. Ouvrez l'invite de commande.
+2. Créez un environnement virtuel avec la commande suivante :
+
+    ```bash
+    python -m venv Logiciel_env
+    ```
+
+3. Activez l'environnement virtuel :
+
+    ```bash
+    Logiciel_env\Scripts\activate
+    ```
+
+#### Sous macOS/Linux
+
+1. Ouvrez un terminal.
+2. Créez un environnement virtuel avec la commande suivante :
+
+    ```bash
+    python3 -m venv Logiciel_env
+    ```
+
+3. Activez l'environnement virtuel :
+
+    ```bash
+    source Logiciel_env/bin/activate
+    ```
+
+### 2. Mise à Jour de `pip` (si nécessaire)
+
+Si vous rencontrez des problèmes avec `pip`, mettez-le à jour :
 
 ```bash
-python -m venv Logiciel_env
-Logiciel_env\Scripts\activate
-
-Sous macOS/Linux :
-
-bash
-
-python3 -m venv Logiciel_env
-source Logiciel_env/bin/activate
-
-2. Mise à Jour de pip (si nécessaire)
-
-Si vous rencontrez des problèmes avec pip, mettez-le à jour :
-
-bash
-
 pip install --upgrade pip
 
 3. Installation des Dépendances
 
-Avec l'environnement activé, installez les dépendances nécessaires :
+Avec l'environnement virtuel activé, installez les dépendances nécessaires :
 
 bash
 
@@ -84,6 +100,8 @@ Avertissements
 Auteur
 
 Développé par Cédric.P
+
 Licence
 
 Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, de le modifier, et de le distribuer. Cependant, l'auteur décline toute responsabilité quant à l'utilisation de ce logiciel.
+
