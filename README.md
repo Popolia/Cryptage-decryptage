@@ -25,8 +25,6 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 
 ## Installation / Setup Instructions
 
-## Installation
-
 ### Windows
 
 1. Activez l'environnement / Activate the environment 
