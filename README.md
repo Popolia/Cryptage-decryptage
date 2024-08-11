@@ -44,9 +44,7 @@ Utilisation
 
     Lancez l'application avec :
 
-    bash
-
-    python app.py
+    VBScript.vbs ou code.bat ou via code.py
 
     Interface utilisateur :
         Entrez un code pour générer la clé AES.
