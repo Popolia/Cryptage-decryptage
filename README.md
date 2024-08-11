@@ -2,79 +2,90 @@
 
 Une application Python avec une interface graphique Tkinter pour **crypter** et **décrypter** du texte à l'aide de l'algorithme AES (Advanced Encryption Standard).
 
-## Fonctionnalités
+A Python GUI application using Tkinter for **encrypting** and **decrypting** text with AES (Advanced Encryption Standard).
 
-- **Chiffrement** et **déchiffrement** du texte avec AES (128, 192, 256 bits).
-- **Modes de chiffrement** : CFB, CBC, GCM.
-- **Charger** et **enregistrer** des fichiers texte (.txt).
-- **Copier**, **coller**, et **effacer** du texte via l'interface.
+## Fonctionnalités / Features
 
-## Prérequis
+- **Crypter** et **décrypter** du texte avec AES (clés de 128, 192, 256 bits).  
+  **Encrypt** and **decrypt** text with AES (128, 192, 256-bit keys).
+- **Modes de chiffrement** : CFB, CBC, GCM.  
+  **Encryption modes**: CFB, CBC, GCM.
+- **Charger** et **enregistrer** des fichiers texte (.txt).  
+  **Load** and **save** text files (.txt).
+- **Copier**, **coller**, et **effacer** du texte via l'interface.  
+  **Copy**, **paste**, and **clear** text within the app.
+
+## Prérequis / Requirements
 
 - Python 3.x
-- Bibliothèque Tkinter (incluse avec Python)
-- Bibliothèque `cryptography`
+- Tkinter (inclus avec Python)  
+  Tkinter (comes with Python)
+- Bibliothèque `cryptography`  
+  `cryptography` library
 
-## Installation
+## Installation / Setup Instructions
 
-### Windows
+### 1. Environnement Virtuel / Virtual Environment
 
-1. Créez un environnement virtuel :
+Créez et activez un environnement virtuel :
 
-    ```bash
-    python -m venv Logiciel_env
-    ```
+Create and activate a virtual environment:
 
-2. Activez l'environnement :
+- **Windows**:
+  
+  ```bash
+  python -m venv Logiciel_env
+  Logiciel_env\Scripts\activate
 
-    ```bash
-    Logiciel_env\Scripts\activate
-    ```
+    macOS/Linux:
 
-### macOS/Linux
+    bash
 
-1. Créez un environnement virtuel :
-
-    ```bash
     python3 -m venv Logiciel_env
-    ```
-
-2. Activez l'environnement :
-
-    ```bash
     source Logiciel_env/bin/activate
-    ```
 
-### Installation des Dépendances
+2. Installation des Dépendances / Install Dependencies
 
-Avec l'environnement activé, installez les dépendances :
+Avec l'environnement virtuel activé, installez les dépendances nécessaires :
 
-```bash
+With the virtual environment active, install the required packages:
+
+bash
+
 pip install -r requirements.txt
 
-Utilisation
+Utilisation / How to Use
 
-    Lancez l'application avec :
+    Lancez l'application / Run the application:
 
     bash
 
     python app.py
 
-    Interface utilisateur :
-        Entrez un code pour générer la clé AES.
-        Choisissez la méthode (AES-128, AES-192, AES-256) et le mode (CFB, CBC, GCM).
-        Chargez un fichier texte ou saisissez du texte.
+    Dans l'application / In the app:
+        Entrez un code (mot de passe) pour générer la clé AES.
+        Enter a code (password) to generate the AES key.
+        Choisissez la méthode de chiffrement (AES-128, AES-192, AES-256) et le mode (CFB, CBC, GCM).
+        Select the encryption method (AES-128, AES-192, AES-256) and mode (CFB, CBC, GCM).
+        Chargez un fichier texte ou saisissez du texte dans la zone de texte.
+        Load a text file or type text into the input area.
         Cryptez ou décryptez le texte.
-        Copiez, collez, ou effacez le texte.
+        Encrypt or decrypt the text.
+        Copiez, collez, ou effacez le texte selon vos besoins.
+        Copy, paste, or clear the text as needed.
 
-Remarques
+Remarques / Notes
 
-    Conservez le code (mot de passe) utilisé pour le chiffrement. Il est indispensable pour le décryptage.
-    Le texte chiffré est encodé en base64.
+    Conservez le code (mot de passe) utilisé pour le chiffrement. Il est nécessaire pour le décryptage.
+    Remember your code (password) used for encryption—it is required for decryption.
+    Le texte chiffré est encodé en base64 pour un stockage sécurisé.
+    Encrypted text is base64 encoded for safe storage.
 
-Auteur
+Auteur / Author
 
 Développé par Cédric.P
-Licence
+Developed by Cédric.P
+Licence / License
 
 Ce projet est sous licence MIT.
+This project is licensed under the MIT License.
