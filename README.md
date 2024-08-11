@@ -42,15 +42,17 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
     ```bash
     source Logiciel_env/bin/activate
     ```
+    
 2. Installation des Dépendances / Install Dependencies
 
-Avec l'environnement virtuel activé, installez les dépendances nécessaires :
+   Avec l'environnement virtuel activé, installez les dépendances nécessaires :
 
-With the virtual environment active, install the required packages:
+   With the virtual environment active, install the required packages:
 
-bash
+```bash
 
 pip install -r requirements.txt
+```
 
 Utilisation / How to Use
 
