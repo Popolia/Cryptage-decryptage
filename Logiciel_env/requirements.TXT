@@ -1,10 +1,35 @@
-tk #: module principal pour la création de l'interface graphique.
-cryptography #: pour les opérations de chiffrement et de déchiffrement AES.
-pyperclip # : pour copier du texte dans le presse-papiers.
-secrets #: pour générer des octets aléatoires.
-pyinstaller
-pyperclip
+#(Logiciel_env)
+# si dans l'environnement virtuel vous pouvez pas utiliser python metter a jour pip // if in the virtual environment you cannot use python update pip
+# exemple 1 : pip3 install --upgrade pip ou pip install --upgrade pip
 
-
-
-
+# how to install all the prerequisites
+#exemple 2: C:\Users\Admin\Documents\GitHub\Cryptage-decryptage\Logiciel_env> pip install -r requirements.tx
+altgraph                
+bottle                    
+bottle-websocket           
+certifi                   
+cffi                      
+charset-normalizer        
+cryptography               
+Eel                        
+future                    
+gevent                 
+gevent-websocket          
+greenlet                  
+idna                       
+packaging                  
+pefile                 
+pip                        
+pycparser                  
+pyinstaller               
+pyinstaller-hooks-contrib 
+pyparsing                
+pyperclip                 
+pywin32-ctypes           
+requests                  
+setuptools                
+tk                          
+urllib3                    
+whichcraft                 
+zope.event                   
+zope.interface              
