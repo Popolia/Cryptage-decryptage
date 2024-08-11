@@ -42,8 +42,7 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 
 1. Activez l'environnement / Activate the environment 
 
-![imasdsdge](https://github.com/user-attachments/assets/a8807b43-ad63-4b52-885c-ecc18f10e1a7)
-
+![image](https://github.com/user-attachments/assets/74faca57-7582-4fdb-95f5-3d5e5136f7fc)
 
     ```bash
     source Logiciel_env/bin/activate
