@@ -9,6 +9,69 @@ from cryptography.hazmat.primitives import padding as crypto_padding
 import os
 import base64
 
+# Dictionnaire pour les traductions
+LANGUAGES = {
+    'fr': {
+        'enter_code': "Entrez le code:",
+        'choose_method': "Choisissez une méthode",
+        'choose_mode': "Choisissez un mode",
+        'encrypt': "Crypter",
+        'decrypt': "Décrypter",
+        'clear_text': "Effacer texte",
+        'load': "Charger",
+        'save': "Enregistrer",
+        'copy_text': "Copier texte",
+        'paste_text': "Coller texte",
+        'error': "Erreur",
+        'error_message': "Veuillez entrer un code, méthode et mode valides.",
+        'decrypt_error': "Texte ou code non valide.",
+        'clipboard_error': "Aucun texte valide dans le presse-papiers.",
+        'method_tooltip': "AES-128 : Sécurité solide avec une clé de 128 bits.\nAES-192 : Sécurité renforcée avec une clé de 192 bits.\nAES-256 : Sécurité maximale avec une clé de 256 bits.",
+        'mode_tooltip': "CFB : Adapté pour flux de données continus.\nCBC : Sécurisé pour chiffrement par blocs.\nGCM : Chiffrement et intégrité des données combinés."
+    },
+    'en': {
+        'enter_code': "Enter code:",
+        'choose_method': "Choose a method",
+        'choose_mode': "Choose a mode",
+        'encrypt': "Encrypt",
+        'decrypt': "Decrypt",
+        'clear_text': "Clear text",
+        'load': "Load",
+        'save': "Save",
+        'copy_text': "Copy text",
+        'paste_text': "Paste text",
+        'error': "Error",
+        'error_message': "Please enter a valid code, method, and mode.",
+        'decrypt_error': "Invalid text or code.",
+        'clipboard_error': "No valid text in the clipboard.",
+        'method_tooltip': "AES-128: Solid security with a 128-bit key.\nAES-192: Enhanced security with a 192-bit key.\nAES-256: Maximum security with a 256-bit key.",
+        'mode_tooltip': "CFB: Suitable for continuous data streams.\nCBC: Secure for block encryption.\nGCM: Encryption and data integrity combined."
+    }
+}
+
+current_language = 'fr'  # Langue par défaut
+
+# Fonction pour mettre à jour les textes en fonction de la langue sélectionnée
+def update_texts():
+    texts = LANGUAGES[current_language]
+    code_label.config(text=texts['enter_code'])
+    method_combobox.set(texts['choose_method'])
+    mode_combobox.set(texts['choose_mode'])
+    encrypt_button.config(text=texts['encrypt'])
+    decrypt_button.config(text=texts['decrypt'])
+    clear_button.config(text=texts['clear_text'])
+    load_button.config(text=texts['load'])
+    save_button.config(text=texts['save'])
+    copy_button.config(text=texts['copy_text'])
+    paste_button.config(text=texts['paste_text'])
+    create_tooltip(method_combobox, texts['method_tooltip'])
+    create_tooltip(mode_combobox, texts['mode_tooltip'])
+
+def change_language(lang):
+    global current_language
+    current_language = lang
+    update_texts()
+
 # Fonction pour afficher des infobulles
 def create_tooltip(widget, text):
     tooltip = tk.Toplevel(widget, bg='lightyellow', padx=1, pady=1)
@@ -121,7 +184,7 @@ def encrypt_aes():
     method = method_combobox.get()
     mode = mode_combobox.get()
     if not code or method not in methods_list or mode not in mode_list:
-        messagebox.showerror("Erreur", "Veuillez entrer un code, méthode et mode valides.")
+        messagebox.showerror(LANGUAGES[current_language]['error'], LANGUAGES[current_language]['error_message'])
         return
     
     aes_key = generate_aes_key_from_code(code, method)
@@ -136,7 +199,7 @@ def decrypt_aes():
     method = method_combobox.get()
     mode = mode_combobox.get()
     if not code or method not in methods_list or mode not in mode_list:
-        messagebox.showerror("Erreur", "Veuillez entrer un code, méthode et mode valides.")
+        messagebox.showerror(LANGUAGES[current_language]['error'], LANGUAGES[current_language]['error_message'])
         return
     
     aes_key = generate_aes_key_from_code(code, method)
@@ -148,7 +211,7 @@ def decrypt_aes():
         content_text.delete('1.0', tk.END)
         content_text.insert(tk.END, original_text)
     except (ValueError, base64.binascii.Error):
-        messagebox.showerror("Erreur", "Texte ou code non valide.")
+        messagebox.showerror(LANGUAGES[current_language]['error'], LANGUAGES[current_language]['decrypt_error'])
 
 # Fonction pour effacer le texte
 def clear_text():
@@ -166,7 +229,7 @@ def paste_from_clipboard():
         content = root.clipboard_get()
         content_text.insert(tk.END, content)
     except tk.TclError:
-        messagebox.showerror("Erreur", "Aucun texte valide dans le presse-papiers.")
+        messagebox.showerror(LANGUAGES[current_language]['error'], LANGUAGES[current_language]['clipboard_error'])
 
 # Fonction pour charger un document
 def charger_document():
@@ -188,6 +251,12 @@ def enregistrer_document():
 root = tk.Tk()
 root.title("Cryptage/Décryptage by Cédric.P")
 
+# Création du menu pour la sélection de la langue
+language_menu = tk.Menu(root)
+root.config(menu=language_menu)
+language_menu.add_command(label="Français", command=lambda: change_language('fr'))
+language_menu.add_command(label="English", command=lambda: change_language('en'))
+
 # Création des cadres pour organiser les éléments
 input_frame = tk.Frame(root, padx=10, pady=10)
 input_frame.pack(side=tk.TOP, fill=tk.X)
@@ -202,7 +271,7 @@ content_frame = tk.Frame(root, padx=10, pady=10)
 content_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 # Zone d'entrée pour le code
-code_label = tk.Label(input_frame, text="Entrez le code:")
+code_label = tk.Label(input_frame, text=LANGUAGES[current_language]['enter_code'])
 code_label.grid(row=0, column=0, sticky=tk.W)
 
 code_entry = tk.Entry(input_frame)
@@ -211,33 +280,27 @@ code_entry.grid(row=0, column=1, sticky=tk.EW, padx=5)
 # Choix de la méthode de cryptage
 methods_list = ["AES-128", "AES-192", "AES-256"]
 method_combobox = ttk.Combobox(input_frame, values=methods_list)
-method_combobox.set("Choisissez une méthode")
+method_combobox.set(LANGUAGES[current_language]['choose_method'])
 method_combobox.grid(row=1, column=1, sticky=tk.EW, padx=5)
-
-# Ajout d'infobulles pour les méthodes de cryptage
-create_tooltip(method_combobox, "AES-128 : Sécurité solide avec une clé de 128 bits.\nAES-192 : Sécurité renforcée avec une clé de 192 bits.\nAES-256 : Sécurité maximale avec une clé de 256 bits.")
 
 # Choix du mode d'opération
 mode_list = ["CFB", "CBC", "GCM"]
 mode_combobox = ttk.Combobox(input_frame, values=mode_list)
-mode_combobox.set("Choisissez un mode")
+mode_combobox.set(LANGUAGES[current_language]['choose_mode'])
 mode_combobox.grid(row=2, column=1, sticky=tk.EW, padx=5)
 
-# Ajout d'infobulles pour les modes d'opération
-create_tooltip(mode_combobox, "CFB : Adapté pour flux de données continus.\nCBC : Sécurisé pour chiffrement par blocs.\nGCM : Chiffrement et intégrité des données combinés.")
-
 # Création des boutons de chargement et d'enregistrement
-load_button = tk.Button(button_frame, text="Charger", command=charger_document)
+load_button = tk.Button(button_frame, text=LANGUAGES[current_language]['load'], command=charger_document)
 load_button.pack(side=tk.LEFT, padx=5)
 
-save_button = tk.Button(button_frame, text="Enregistrer", command=enregistrer_document)
+save_button = tk.Button(button_frame, text=LANGUAGES[current_language]['save'], command=enregistrer_document)
 save_button.pack(side=tk.LEFT, padx=5)
 
 # Boutons de copier et coller texte
-copy_button = tk.Button(clipboard_frame, text="Copier texte", command=copy_to_clipboard)
+copy_button = tk.Button(clipboard_frame, text=LANGUAGES[current_language]['copy_text'], command=copy_to_clipboard)
 copy_button.pack(side=tk.LEFT, padx=5)
 
-paste_button = tk.Button(clipboard_frame, text="Coller texte", command=paste_from_clipboard)
+paste_button = tk.Button(clipboard_frame, text=LANGUAGES[current_language]['paste_text'], command=paste_from_clipboard)
 paste_button.pack(side=tk.LEFT, padx=5)
 
 # Création de la zone de texte
@@ -245,14 +308,18 @@ content_text = tk.Text(content_frame, wrap=tk.WORD)
 content_text.pack(expand=True, fill=tk.BOTH)
 
 # Boutons pour crypter, décrypter et effacer le texte
-encrypt_button = tk.Button(button_frame, text="Crypter", command=encrypt_aes)
+encrypt_button = tk.Button(button_frame, text=LANGUAGES[current_language]['encrypt'], command=encrypt_aes)
 encrypt_button.pack(side=tk.LEFT, padx=5)
 
-decrypt_button = tk.Button(button_frame, text="Décrypter", command=decrypt_aes)
+decrypt_button = tk.Button(button_frame, text=LANGUAGES[current_language]['decrypt'], command=decrypt_aes)
 decrypt_button.pack(side=tk.LEFT, padx=5)
 
-clear_button = tk.Button(button_frame, text="Effacer texte", command=clear_text)
+clear_button = tk.Button(button_frame, text=LANGUAGES[current_language]['clear_text'], command=clear_text)
 clear_button.pack(side=tk.LEFT, padx=5)
+
+# Initialiser les infobulles
+create_tooltip(method_combobox, LANGUAGES[current_language]['method_tooltip'])
+create_tooltip(mode_combobox, LANGUAGES[current_language]['mode_tooltip'])
 
 # Lancement de la boucle principale
 root.mainloop()
