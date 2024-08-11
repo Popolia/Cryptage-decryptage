@@ -1,72 +1,109 @@
-Imports :
+Cryptage/Décryptage AES - Application Tkinter
+Description
 
-tkinter : module principal pour la création de l'interface graphique.
-filedialog : pour ouvrir et enregistrer des fichiers.
-messagebox : pour afficher des messages d'erreur.
-cryptography : pour les opérations de chiffrement et de déchiffrement AES.
-os : pour les opérations système.
-pyperclip : pour copier du texte dans le presse-papiers.
-secrets : pour générer des octets aléatoires.
+Cette application GUI (interface graphique) en Python permet de crypter et décrypter des textes à l'aide de l'algorithme AES (Advanced Encryption Standard). Elle utilise l'interface Tkinter pour l'interaction avec l'utilisateur, offrant une interface simple pour charger, crypter, décrypter, copier, coller, et enregistrer du texte.
 
+L'application supporte trois tailles de clé pour AES (128, 192 et 256 bits) et trois modes de chiffrement (CFB, CBC, GCM), chacun avec ses propres propriétés et niveaux de sécurité.
+Fonctionnalités
 
-Fonctions de chiffrement/déchiffrement :
+    Charger un fichier texte (.txt) à crypter ou décrypter.
+    Enregistrer le contenu actuel de la zone de texte dans un fichier .txt.
+    Crypter le texte en utilisant un mot de passe, une méthode de chiffrement (AES-128, AES-192, AES-256) et un mode de chiffrement (CFB, CBC, GCM).
+    Décrypter le texte chiffré en utilisant les mêmes paramètres que ceux utilisés pour le cryptage.
+    Effacer le contenu de la zone de texte.
+    Copier le contenu de la zone de texte dans le presse-papiers.
+    Coller du texte depuis le presse-papiers dans la zone de texte.
 
-generate_aes_key() : génère une clé AES avec un codage entropique.
-aes_encrypt(key, plaintext) : chiffre le texte en clair avec AES.
-aes_decrypt(key, ciphertext) : déchiffre le texte chiffré avec AES.
-encrypt_aes(aes_key) : fonction d'interface pour le chiffrement AES.
-decrypt_aes(aes_key) : fonction d'interface pour le déchiffrement AES.
-clear_text() : efface le texte dans la zone de texte.
-copy_to_clipboard() : copie le texte dans le presse-papiers.
-charger_document() : charge un document à partir du disque.
-enregistrer_document() : enregistre le document actuel sur le disque.
+Prérequis
 
+    Python 3.x
+    Bibliothèque Tkinter (installée par défaut avec Python)
+    Bibliothèque cryptography pour le chiffrement AES
 
-Interface utilisateur :
+Installation des Prérequis
+1. Création et activation de l'environnement virtuel
 
-Fenêtre principale avec le titre "Criptage/Décriptage by Cédric P".
-Cadre pour les boutons de chargement et d'enregistrement.
-Boutons pour charger, enregistrer, crypter, décrypter, effacer et copier le texte.
-Zone de texte pour afficher et saisir le texte.
-Génération de la clé AES :
+Il est recommandé d'utiliser un environnement virtuel pour isoler les dépendances de votre projet. Voici comment créer et activer un environnement virtuel :
 
-Une clé AES est générée au démarrage de l'application.
+Sous Windows :
 
-
-Boucle principale :
-
-La boucle principale (root.mainloop()) est lancée pour exécuter l'interface graphique.
-
-
-Si vous déplacez le dossier contenant votre projet vers un nouvel emplacement, il est généralement préférable de recréer l'environnement virtuel dans le nouveau chemin. Cela garantira que toutes les dépendances et configurations sont correctement configurées pour le nouvel emplacement.
-
-Voici les étapes générales que vous pouvez suivre pour recréer l'environnement virtuel dans un nouvel emplacement :
-
-Déplacez votre dossier de projet vers le nouvel emplacement.
-
-Ouvrez un terminal ou une invite de commande et naviguez jusqu'au nouvel emplacement où vous avez déplacé votre projet.
-
-Recréez l'environnement virtuel en utilisant la commande python -m venv nom_de_votre_environnement. Par exemple :
-
-Copy code
-python -m venv nouvel_env
-Cela créera un nouvel environnement virtuel nommé "nouvel_env" dans le répertoire actuel.
-
-Activez l'environnement virtuel nouvellement créé en exécutant la commande spécifique à votre système d'exploitation. Par exemple :
-
-Sur Windows :
-Copy code
-.\nouvel_env\Scripts\activate
-Sur macOS et Linux :
 bash
-Copy code
-source nouvel_env/bin/activate
-Une fois l'environnement virtuel activé, installez toutes les dépendances nécessaires pour votre projet à l'aide de pip install -r requirements.txt (si vous avez un fichier requirements.txt).
 
-Avec l'environnement virtuel activé et toutes les dépendances installées, vous devriez pouvoir exécuter les commandes nécessaires pour votre projet, telles que l'exécution de PyInstaller pour créer des exécutables ou l'exécution de votre script Python.
+python -m venv Logiciel_env
+Logiciel_env\Scripts\activate
 
-En suivant ces étapes, vous devriez pouvoir déplacer votre projet vers un nouvel emplacement et recréer l'environnement virtuel sans rencontrer de problèmes majeurs.
+Sous macOS/Linux :
 
-pip install -r requirements.txt
+bash
 
-tkinter = tk
+python3 -m venv Logiciel_env
+source Logiciel_env/bin/activate
+
+2. Mise à jour de pip dans l'environnement virtuel
+
+Si vous ne pouvez pas utiliser Python correctement dans l'environnement virtuel, il est recommandé de mettre à jour pip :
+
+Sous Windows :
+
+bash
+
+pip install --upgrade pip
+
+Sous macOS/Linux :
+
+bash
+
+pip3 install --upgrade pip
+
+3. Installation des dépendances
+
+Une fois l'environnement virtuel activé et pip mis à jour, vous pouvez installer toutes les dépendances requises pour le projet en utilisant le fichier requirements.txt.
+
+Exemple sous Windows :
+
+bash
+
+C:\Users\Admin\Documents\GitHub\Cryptage-decryptage\Logiciel_env> pip install -r requirements.txt
+
+Exemple sous macOS/Linux :
+
+bash
+
+/path/to/your/project/Logiciel_env> pip install -r requirements.txt
+
+Remarque
+
+Le chemin exact vers votre dossier de projet peut varier. Assurez-vous d'exécuter la commande pip install -r requirements.txt dans le bon répertoire, là où se trouve votre fichier requirements.txt.
+Utilisation
+
+    Clonez ce dépôt ou téléchargez le code source.
+
+    Assurez-vous que les dépendances sont installées.
+
+    Exécutez le script Python (app.py ou main.py selon le nom de votre fichier).
+
+    bash
+
+    python app.py
+
+    Dans l'interface utilisateur :
+        Entrez un code (mot de passe) pour générer la clé AES.
+        Sélectionnez la méthode (AES-128, AES-192, AES-256).
+        Sélectionnez le mode de chiffrement (CFB, CBC, GCM).
+        Chargez un fichier texte ou entrez du texte dans la zone de texte.
+        Cliquez sur Crypter pour chiffrer le texte.
+        Cliquez sur Décrypter pour déchiffrer le texte chiffré.
+        Utilisez les boutons Copier, Coller, Effacer, Charger, et Enregistrer selon vos besoins.
+
+Avertissements
+
+    Assurez-vous de mémoriser ou de stocker de manière sécurisée le code (mot de passe) utilisé pour le chiffrement, car il est nécessaire pour déchiffrer les données.
+    Le fichier texte chiffré est encodé en base64 pour le rendre lisible en texte brut, mais il est toujours chiffré et nécessite le même code, méthode, et mode pour être décrypté.
+
+Auteur
+
+    Cédric.P
+
+Licence
+
+Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, de le modifier et de le distribuer à des fins personnelles ou commerciales. Cependant, l'auteur ne peut être tenu responsable des dommages résultant de l'utilisation de ce logiciel.
