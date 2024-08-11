@@ -32,7 +32,9 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 ### Windows
 
 1. Activez l'environnement / Activate the environment 
+![image](https://github.com/user-attachments/assets/74faca57-7582-4fdb-95f5-3d5e5136f7fc)
 
+![image](https://github.com/user-attachments/assets/0d9f3105-d9ec-4a14-9363-df459b593176)
 
     ```
     Logiciel_env\Scripts\activate
@@ -41,13 +43,9 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 ### macOS/Linux
 
 1. Activez l'environnement / Activate the environment 
-
-![image](https://github.com/user-attachments/assets/74faca57-7582-4fdb-95f5-3d5e5136f7fc)
-
     ```
     source Logiciel_env/bin/activate
     ```
-![image](https://github.com/user-attachments/assets/0d9f3105-d9ec-4a14-9363-df459b593176)
 
 2. Installation des Dépendances / Install Dependencies
 
