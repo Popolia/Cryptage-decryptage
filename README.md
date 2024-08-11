@@ -44,7 +44,7 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 
 ![image](https://github.com/user-attachments/assets/74faca57-7582-4fdb-95f5-3d5e5136f7fc)
 
-    ```bash
+    ```
     source Logiciel_env/bin/activate
     ```
 ![image](https://github.com/user-attachments/assets/0d9f3105-d9ec-4a14-9363-df459b593176)
@@ -57,8 +57,7 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 
 ![imsdsdage](https://github.com/user-attachments/assets/9e77a9be-bde4-4a58-9d5b-76057552013f)
 
-```bash
-
+```
 pip install -r requirements.txt
 ```
 
