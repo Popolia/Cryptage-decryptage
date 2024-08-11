@@ -47,8 +47,7 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
     ```bash
     source Logiciel_env/bin/activate
     ```
-    
-    ![image](https://github.com/user-attachments/assets/51a55c5a-03d6-4b90-94c7-2bce857cbe2a)
+![image](https://github.com/user-attachments/assets/0d9f3105-d9ec-4a14-9363-df459b593176)
 
 2. Installation des Dépendances / Install Dependencies
 
