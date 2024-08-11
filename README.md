@@ -25,8 +25,6 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 
 ## Installation / Setup Instructions
 
-## Installation
-
 ### Windows
 
 1. Activez l'environnement / Activate the environment 
@@ -44,15 +42,17 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
     ```bash
     source Logiciel_env/bin/activate
     ```
+    
 2. Installation des Dépendances / Install Dependencies
 
-Avec l'environnement virtuel activé, installez les dépendances nécessaires :
+   Avec l'environnement virtuel activé, installez les dépendances nécessaires :
 
-With the virtual environment active, install the required packages:
+   With the virtual environment active, install the required packages:
 
-bash
+```bash
 
 pip install -r requirements.txt
+```
 
 Utilisation / How to Use
 
@@ -83,6 +83,12 @@ Auteur / Author
 
 Développé par Cédric.P
 Developed by Cédric.P
+
+
 Licence / License
 
 Ce projet est sous licence MIT.
+```
+Vous êtes libre de l'utiliser, de le modifier, et de le distribuer. Cependant, l'auteur décline toute responsabilité quant à l'utilisation de ce logiciel.
+You are free to use, modify and distribute it. However, the author declines all responsibility for the use of this software.
+```
