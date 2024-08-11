@@ -56,7 +56,7 @@ Utilisation
 Remarques
 
     Conservez le code (mot de passe) utilisé pour le chiffrement. Il est indispensable pour le décryptage.
-    Le texte chiffré est encodé en base64.```
+    Le texte chiffré est encodé en base64.
 
 Auteur
 
