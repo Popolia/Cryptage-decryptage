@@ -27,13 +27,7 @@ Une application Python avec une interface graphique Tkinter pour **crypter** et 
 
 ### macOS/Linux
 
-1. Créez un environnement virtuel :
-
-    ```bash
-    python3 -m venv Logiciel_env
-    ```
-
-2. Activez l'environnement :
+1. Activez l'environnement :
 
     ```bash
     source Logiciel_env/bin/activate
