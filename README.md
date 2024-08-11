@@ -44,7 +44,7 @@ Utilisation
 
     Lancez l'application avec :
 
-    VBScript.vbs ou code.bat ou via code.py
+    VBScript.vbs ou code.bat ou code.py
 
     Interface utilisateur :
         Entrez un code pour générer la clé AES.
