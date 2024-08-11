@@ -6,10 +6,9 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 
 ## Fonctionnalités / Features
 
-![imsdsdage](https://github.com/user-attachments/assets/76d0e466-605d-4b3a-8017-e1a8becfd174)
-
 ![image](https://github.com/user-attachments/assets/3109f4aa-9084-438f-8466-7447f2a1d277)
 
+![imsdsdage](https://github.com/user-attachments/assets/76d0e466-605d-4b3a-8017-e1a8becfd174)
 
 - **Crypter** et **décrypter** du texte avec AES (clés de 128, 192, 256 bits).  
   **Encrypt** and **decrypt** text with AES (128, 192, 256-bit keys).
