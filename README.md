@@ -88,5 +88,7 @@ Developed by Cédric.P
 Licence / License
 
 Ce projet est sous licence MIT.
+```
 Vous êtes libre de l'utiliser, de le modifier, et de le distribuer. Cependant, l'auteur décline toute responsabilité quant à l'utilisation de ce logiciel.
 You are free to use, modify and distribute it. However, the author declines all responsibility for the use of this software.
+```
