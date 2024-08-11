@@ -25,25 +25,25 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 
 ## Installation / Setup Instructions
 
-### 1. Environnement Virtuel / Virtual Environment
+## Installation
 
-Créez et activez un environnement virtuel :
+### Windows
 
-Create and activate a virtual environment:
+1. Activez l'environnement / Activate the environment 
 
-- **Windows**:
-  
-  ```bash
-  python -m venv Logiciel_env
-  Logiciel_env\Scripts\activate
 
-    macOS/Linux:
+    ```bash
+    Logiciel_env\Scripts\activate
+    ```
 
-    bash
+### macOS/Linux
 
-    python3 -m venv Logiciel_env
+1. Activez l'environnement / Activate the environment 
+
+
+    ```bash
     source Logiciel_env/bin/activate
-
+    ```
 2. Installation des Dépendances / Install Dependencies
 
 Avec l'environnement virtuel activé, installez les dépendances nécessaires :
@@ -58,9 +58,7 @@ Utilisation / How to Use
 
     Lancez l'application / Run the application:
 
-    bash
-
-    python app.py
+    VBScript.vbs ou code.bat ou code.py
 
     Dans l'application / In the app:
         Entrez un code (mot de passe) pour générer la clé AES.
@@ -88,4 +86,3 @@ Developed by Cédric.P
 Licence / License
 
 Ce projet est sous licence MIT.
-This project is licensed under the MIT License.
