@@ -19,13 +19,7 @@ Une application Python avec une interface graphique Tkinter pour **crypter** et 
 
 ### Windows
 
-1. Créez un environnement virtuel :
-
-    ```bash
-    python -m venv Logiciel_env
-    ```
-
-2. Activez l'environnement :
+1. Activez l'environnement :
 
     ```bash
     Logiciel_env\Scripts\activate
