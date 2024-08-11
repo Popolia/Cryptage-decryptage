@@ -34,7 +34,7 @@ A Python GUI application using Tkinter for **encrypting** and **decrypting** tex
 1. Activez l'environnement / Activate the environment 
 
 
-    ```bash
+    ```
     Logiciel_env\Scripts\activate
     ```
 
