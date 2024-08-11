@@ -1,34 +1,36 @@
-Cryptage/Décryptage AES - Application Tkinter
-Description
+# Cryptage/Décryptage AES - Application Tkinter
+
+## Description
 
 Cette application GUI (interface graphique) en Python permet de crypter et décrypter des textes à l'aide de l'algorithme AES (Advanced Encryption Standard). Elle utilise l'interface Tkinter pour l'interaction avec l'utilisateur, offrant une interface simple pour charger, crypter, décrypter, copier, coller, et enregistrer du texte.
 
 L'application supporte trois tailles de clé pour AES (128, 192 et 256 bits) et trois modes de chiffrement (CFB, CBC, GCM), chacun avec ses propres propriétés et niveaux de sécurité.
-Fonctionnalités
 
-    Charger un fichier texte (.txt) à crypter ou décrypter.
-    Enregistrer le contenu actuel de la zone de texte dans un fichier .txt.
-    Crypter le texte en utilisant un mot de passe, une méthode de chiffrement (AES-128, AES-192, AES-256) et un mode de chiffrement (CFB, CBC, GCM).
-    Décrypter le texte chiffré en utilisant les mêmes paramètres que ceux utilisés pour le cryptage.
-    Effacer le contenu de la zone de texte.
-    Copier le contenu de la zone de texte dans le presse-papiers.
-    Coller du texte depuis le presse-papiers dans la zone de texte.
+## Fonctionnalités
 
-Prérequis
+- **Charger** un fichier texte (.txt) à crypter ou décrypter.
+- **Enregistrer** le contenu actuel de la zone de texte dans un fichier .txt.
+- **Crypter** le texte en utilisant un mot de passe, une méthode de chiffrement (AES-128, AES-192, AES-256) et un mode de chiffrement (CFB, CBC, GCM).
+- **Décrypter** le texte chiffré en utilisant les mêmes paramètres que ceux utilisés pour le cryptage.
+- **Effacer** le contenu de la zone de texte.
+- **Copier** le contenu de la zone de texte dans le presse-papiers.
+- **Coller** du texte depuis le presse-papiers dans la zone de texte.
 
-    Python 3.x
-    Bibliothèque Tkinter (installée par défaut avec Python)
-    Bibliothèque cryptography pour le chiffrement AES
+## Prérequis
 
-Installation des Prérequis
-1. Création et activation de l'environnement virtuel
+- Python 3.x
+- Bibliothèque Tkinter (installée par défaut avec Python)
+- Bibliothèque `cryptography` pour le chiffrement AES
+
+## Installation des Prérequis
+
+### 1. Création et activation de l'environnement virtuel
 
 Il est recommandé d'utiliser un environnement virtuel pour isoler les dépendances de votre projet. Voici comment créer et activer un environnement virtuel :
 
-Sous Windows :
+**Sous Windows :**
 
-bash
-
+```bash
 python -m venv Logiciel_env
 Logiciel_env\Scripts\activate
 
@@ -71,9 +73,8 @@ bash
 
 /path/to/your/project/Logiciel_env> pip install -r requirements.txt
 
-Remarque
+    Remarque : Le chemin exact vers votre dossier de projet peut varier. Assurez-vous d'exécuter la commande pip install -r requirements.txt dans le bon répertoire, là où se trouve votre fichier requirements.txt.
 
-Le chemin exact vers votre dossier de projet peut varier. Assurez-vous d'exécuter la commande pip install -r requirements.txt dans le bon répertoire, là où se trouve votre fichier requirements.txt.
 Utilisation
 
     Clonez ce dépôt ou téléchargez le code source.
@@ -107,3 +108,15 @@ Auteur
 Licence
 
 Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, de le modifier et de le distribuer à des fins personnelles ou commerciales. Cependant, l'auteur ne peut être tenu responsable des dommages résultant de l'utilisation de ce logiciel.
+
+markdown
+
+
+### Remarques pour l'adaptation GitHub :
+
+- **Formatage** : Utilisez des titres `##` pour les sections principales et `###` pour les sous-sections. Cela garantit une bonne hiérarchie visuelle sur GitHub.
+- **Blocs de code** : Utilisez des blocs de code entourés de triple backticks (```) avec la syntaxe appropriée pour le code Bash ou Python.
+- **Remarques** : Utilisez les `>` pour mettre en avant des remarques ou des notes importantes.
+- **Sections standard** : Incluez des sections courantes comme la **Licence** et l'**Auteur** pour donner du contexte aux utilisateurs et aux contributeurs potentiels.
+
+Avec ces ajustements, le rendu sur GitHub sera propre, structuré, et facile à lire.
